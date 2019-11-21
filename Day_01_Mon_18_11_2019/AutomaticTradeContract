@@ -1,0 +1,10 @@
+pragma solidity ^0.5.12;
+
+contract AutomaticTradeContract {
+  
+  mapping (address => uint) public Offers;
+  
+  function TradeOffer(uint amount, string memory offerPotatos) public {
+    Offers[msg.sender] = amount;
+  }
+}
