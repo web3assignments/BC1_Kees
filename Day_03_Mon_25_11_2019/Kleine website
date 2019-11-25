@@ -1,0 +1,76 @@
+<body>
+Get current Ethereum blocknumber<br>
+Compare to <a href="https://etherscan.io/blocks" target="_blank">Etherscan</a>
+<pre id="log" style="width:100%;height:200px"></pre> 
+<script>
+var transactions;
+function log(logstr) {   
+    document.getElementById("log").innerHTML +=logstr+"\n";
+} 
+   
+async function TransactieHoeveel(hexblocknumber) {
+  const request=JSON.stringify({"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByNumber","params":[hexblocknumber],"id":67});
+//  log(`Sending ${request}`);
+  const rawResponse = await fetch('https://mainnet.infura.io', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: request
+  });
+  const content = await rawResponse.json();
+//  log(`Received ${JSON.stringify(content)}`);
+  transactions = parseInt(content.result);
+  log(`Transactie totaal= ${transactions}`);
+}
+async function TransactieInformatie(hexblocknumber,TransactieIndex) {
+  console.log("h");
+  const request=JSON.stringify({"jsonrpc":"2.0","method":"eth_getTransactionByBlockNumberAndIndex","params":[hexblocknumber,TransactieIndex],"id":67});
+  console.log(`Sending ${request}`);
+  const rawResponse = await fetch('https://mainnet.infura.io', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: request
+  });
+  const content = await rawResponse.json();
+  console.log(`Received ${JSON.stringify(content)}`);
+  transactionInfo = content.result;
+  
+//  log(`Transactie index = ${TransactieIndex}`);
+  log(`Transaction info = ${JSON.stringify(content.result)}`);
+}
+async function g() {
+  const request=JSON.stringify({"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":67});
+//  log(`Sending ${request}`);
+  const rawResponse = await fetch('https://mainnet.infura.io', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: request
+  });
+  const content = await rawResponse.json();
+//  log(`Received ${JSON.stringify(content)}`);
+  var blocknumber = parseInt(content.result);
+  hexblocknumber = "0x"+blocknumber.toString(16);
+
+  
+  var i;
+  for (i = 0; i < 20; i++) {
+	TransactieIndex = "0x" + i;
+   TransactieInformatie(hexblocknumber,TransactieIndex);  }
+
+  TransactieHoeveel(hexblocknumber);
+
+ 
+
+  log(`Huidige blocknummer = ${blocknumber}`);  
+}
+g();
+</script>
+</body>
