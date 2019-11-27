@@ -1,0 +1,34 @@
+pragma solidity ^0.5.12;
+
+contract AutomaticTradeContract {
+  
+  mapping (address => uint) public Offers;
+  
+  
+  event Log(string message,uint add, uint balance);
+  
+  function () external payable {
+  }
+  
+  function TradeOffer(uint amount) public {
+    Offers[msg.sender] = amount;
+  }
+
+  constructor() public payable {
+    emit Log ("In constructor",msg.value, address(this).balance);
+  }
+
+  function abc() public payable {
+    emit Log("In function abc",msg.value, address(this).balance);
+  }
+
+  
+  function PayToContract() public payable {
+    emit Log("In PayToContract", msg.value, address(this).balance);
+  }
+  
+  function ContractBalance1() public view returns (uint) { 
+      uint balance = address(this).balance;
+      return balance;
+  }
+}
