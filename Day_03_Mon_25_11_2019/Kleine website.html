@@ -23,6 +23,7 @@ async function TransactieHoeveel(hexblocknumber) {
 //  log(`Received ${JSON.stringify(content)}`);
   transactions = parseInt(content.result);
   log(`Transactie totaal= ${transactions}`);
+  return transactions;
 }
 async function TransactieInformatie(hexblocknumber,TransactieIndex) {
   console.log("h");
@@ -62,7 +63,7 @@ async function g() {
   
   var i;
   for (i = 0; i < 20; i++) {
-	TransactieIndex = "0x" + i;
+	TransactieIndex = "0x"+i.toString(16);
    TransactieInformatie(hexblocknumber,TransactieIndex);  }
 
   TransactieHoeveel(hexblocknumber);
