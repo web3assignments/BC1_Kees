@@ -12,9 +12,9 @@ contract AutomaticTradeContract {
   }
   
   function ContractBalance() public view returns (uint) { 
-      return address(this).balance;
       uint balance = ContractBalance();
       require (balance > 0);
+      return address(this).balance;
   }
 
   function Transfer(address payable to) public { 
