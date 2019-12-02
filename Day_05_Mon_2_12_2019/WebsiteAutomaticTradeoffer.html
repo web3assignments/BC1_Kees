@@ -1,0 +1,149 @@
+cript>
+<!DOCTYPE html>
+<html>
+    <head>
+		<script src="http://web3examples.com/lib/web3-browserify.js"></script>
+    </head>
+    <body>
+        <h1>Casino (select Goerli)</h1>
+        <pre id="log" style="width:100%;height:200px"></pre>
+        <script type="text/javascript">
+        function log(logstr) {   
+            document.getElementById("log").innerHTML +=logstr+"\n";
+        }
+        async function f() { 
+            web3 = new Web3(Web3.givenProvider); // provider from metamask         
+            web3.extend({ // web3.eth.requestAccounts() isn't available (yet)
+                methods: [{
+                    name: 'eth_requestAccounts',
+                    call: 'eth_requestAccounts',
+                    params: 0
+                }]
+            });        
+            var result=await web3.eth_requestAccounts().catch(x=>log(x.message));
+            //log(`Value from eth_requestAccounts: ${JSON.stringify(result)}`);
+            var acts=await web3.eth.getAccounts().catch(log);
+            //log(`Here are the accounts: ${JSON.stringify(acts)}`);
+            
+            const AutomaticTradeContract = "0xe7bba31401651A1be290B64382fb25c752dBF9B2"
+            const TradeABI=[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "message",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "offerPotatos",
+				"type": "uint256"
+			}
+		],
+		"name": "Log",
+		"type": "event"
+	},
+	{
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "fallback"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "ContractBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "Offers",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "offerPotatos",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "offerPotatos",
+				"type": "uint256"
+			}
+		],
+		"name": "TradeOffer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "Transfer",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
+            const AutomaticContract= new web3.eth.Contract(TradeABI,AutomaticTradeContract);
+            var result = await AutomaticContract.methods.TradeOffer(60, 600)
+                .send({from: acts[0]});
+			log(`amount=${result.events.Log.returnValues.amount}`);
+			log(`offerpotatoes=${result.events.Log.returnValues.offerPotatos}`);
+           // var win=web3.utils.hexToNumber((result.events[0].raw.data));          
+           // log(`Win result=${win}`);
+			
+        }
+        f();
+        </script>        
+    </body>
+</html>
