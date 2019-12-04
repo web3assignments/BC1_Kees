@@ -1,11 +1,11 @@
-cript>
+</script>
 <!DOCTYPE html>
 <html>
     <head>
 		<script src="http://web3examples.com/lib/web3-browserify.js"></script>
     </head>
     <body>
-        <h1>Casino (select Goerli)</h1>
+        <h1>Tradeoffer</h1>
         <pre id="log" style="width:100%;height:200px"></pre>
         <script type="text/javascript">
         function log(logstr) {   
@@ -25,7 +25,7 @@ cript>
             var acts=await web3.eth.getAccounts().catch(log);
             //log(`Here are the accounts: ${JSON.stringify(acts)}`);
             
-            const AutomaticTradeContract = "0xe7bba31401651A1be290B64382fb25c752dBF9B2"
+            const AutomaticTradeContract = "0x26AB5A8E812EA47b62a3595a9fe5a00cB01f9981"
             const TradeABI=[
 	{
 		"anonymous": false,
@@ -135,14 +135,38 @@ cript>
 	}
 ]
             const AutomaticContract= new web3.eth.Contract(TradeABI,AutomaticTradeContract);
-            var result = await AutomaticContract.methods.TradeOffer(60, 600)
+            var result = await AutomaticContract.methods.TradeOffer(5000, 500)
                 .send({from: acts[0]});
-			log(`amount=${result.events.Log.returnValues.amount}`);
-			log(`offerpotatoes=${result.events.Log.returnValues.offerPotatos}`);
+			log(`Amount in euro = ${result.events.Log.returnValues.amount}`);
+			log("In exchange for");
+			log(`Amount of potatos in tons = ${result.events.Log.returnValues.offerPotatos}`);
            // var win=web3.utils.hexToNumber((result.events[0].raw.data));          
            // log(`Win result=${win}`);
+		    
+            
+            var chainId=await web3.eth.getChainId();
+            log(`We are on chain: ${JSON.stringify(chainId)}`);            
+            ethereum.on('chainChanged', newChain);
+            ethereum.on('networkChanged',newChain); // still used in metamask mobile
+            ethereum.on('chainIdChanged',newChain);      // temp workaround
+            ethereum.autoRefreshOnNetworkChange = false; // temp workaround                    
+            function newChain(newchainId) {
+                chainId=newchainId;
+                log(`We have a new chain: ${chainId}`);
+            }
 			
+			var result=await web3.eth_requestAccounts().catch(x=>log(x.message));
+            log(`Value from eth_requestAccounts: ${JSON.stringify(result)}`);
+            var acts=await web3.eth.getAccounts().catch(log);
+            log(`Here are the accounts: ${JSON.stringify(acts)}`);
+            
+            ethereum.on('accountsChanged', newacts => { 
+                acts=newacts;
+                log(`We have new accounts: ${JSON.stringify(acts)}`);
+            })
+		
         }
+		
         f();
         </script>        
     </body>
