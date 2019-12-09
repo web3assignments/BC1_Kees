@@ -123,15 +123,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"offerPotatos\",\"type\":\"uint256\"}],\"name\":\"Log\",\"type\":\"event\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"constant\":true,\"inputs\":[],\"name\":\"AddressContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ContractBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"Offers\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"offerPotatos\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"offerPotatos\",\"type\":\"uint256\"}],\"name\":\"TradeOffer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"Transfer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Kees/testen/contracts/AutomaticTradeContract.sol\":\"AutomaticTradeContract\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Kees/testen/contracts/AutomaticTradeContract.sol\":{\"keccak256\":\"0xf81c7b957cb7c858625968f063fae187b0f76f6db3b7662890532bb0d740b51c\",\"urls\":[\"bzz-raw://81075a7d81ecf565f8dd531ced171ae2d1096bb0e0b22b09d5e8e25e103400d4\",\"dweb:/ipfs/QmRfTjFyCq9KiNYQ2vhrBTQRqbX4wmf9kGhEBu3qT73ohU\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506103db806100206000396000f3fe60806040526004361061004a5760003560e01c80630a22b1341461004c5780630ffbb538146100a35780632d339b1e1461010f5780633b66805914610160578063cd300bc01461018b575b005b34801561005857600080fd5b506100616101d0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100af57600080fd5b506100f2600480360360208110156100c657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101f5565b604051808381526020018281526020019250505060405180910390f35b34801561011b57600080fd5b5061015e6004803603602081101561013257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610219565b005b34801561016c57600080fd5b50610175610264565b6040518082815260200191505060405180910390f35b34801561019757600080fd5b506101ce600480360360408110156101ae57600080fd5b81019080803590602001909291908035906020019092919050505061029c565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60016020528060005260406000206000915090508060000154908060010154905082565b8073ffffffffffffffffffffffffffffffffffffffff166108fc60059081150290604051600060405180830381858888f19350505050158015610260573d6000803e3d6000fd5b5050565b60008061026f610264565b90506000811161027e57600080fd5b3073ffffffffffffffffffffffffffffffffffffffff163191505090565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190555080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101819055507fc72c11333761a47423f2cbe54eda92b59b0b5977a444194492fe47f41b3c0ab4828260405180806020018481526020018381526020018281038252600f8152602001807f54726164652061677265656d616e740000000000000000000000000000000000815250602001935050505060405180910390a1505056fea265627a7a72315820512e4ca2e0ebd34f4153e8a0114c5f76f0509e852b982e5b22439f68745ebb7264736f6c634300050c0032",
-  "deployedBytecode": "0x60806040526004361061004a5760003560e01c80630a22b1341461004c5780630ffbb538146100a35780632d339b1e1461010f5780633b66805914610160578063cd300bc01461018b575b005b34801561005857600080fd5b506100616101d0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100af57600080fd5b506100f2600480360360208110156100c657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101f5565b604051808381526020018281526020019250505060405180910390f35b34801561011b57600080fd5b5061015e6004803603602081101561013257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610219565b005b34801561016c57600080fd5b50610175610264565b6040518082815260200191505060405180910390f35b34801561019757600080fd5b506101ce600480360360408110156101ae57600080fd5b81019080803590602001909291908035906020019092919050505061029c565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60016020528060005260406000206000915090508060000154908060010154905082565b8073ffffffffffffffffffffffffffffffffffffffff166108fc60059081150290604051600060405180830381858888f19350505050158015610260573d6000803e3d6000fd5b5050565b60008061026f610264565b90506000811161027e57600080fd5b3073ffffffffffffffffffffffffffffffffffffffff163191505090565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190555080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101819055507fc72c11333761a47423f2cbe54eda92b59b0b5977a444194492fe47f41b3c0ab4828260405180806020018481526020018381526020018281038252600f8152602001807f54726164652061677265656d616e740000000000000000000000000000000000815250602001935050505060405180910390a1505056fea265627a7a72315820512e4ca2e0ebd34f4153e8a0114c5f76f0509e852b982e5b22439f68745ebb7264736f6c634300050c0032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"message\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"offerPotatos\",\"type\":\"uint256\"}],\"name\":\"Log\",\"type\":\"event\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"constant\":true,\"inputs\":[],\"name\":\"AddressContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ContractBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"Offers\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"offerPotatos\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"offerPotatos\",\"type\":\"uint256\"}],\"name\":\"TradeOffer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"Transfer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Kees/Desktop/Dapps_Github/BC1_Kees/Day_07_Mon_9_12_2019/testen/contracts/AutomaticTradeContract.sol\":\"AutomaticTradeContract\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Kees/Desktop/Dapps_Github/BC1_Kees/Day_07_Mon_9_12_2019/testen/contracts/AutomaticTradeContract.sol\":{\"keccak256\":\"0xf81c7b957cb7c858625968f063fae187b0f76f6db3b7662890532bb0d740b51c\",\"urls\":[\"bzz-raw://81075a7d81ecf565f8dd531ced171ae2d1096bb0e0b22b09d5e8e25e103400d4\",\"dweb:/ipfs/QmRfTjFyCq9KiNYQ2vhrBTQRqbX4wmf9kGhEBu3qT73ohU\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506103db806100206000396000f3fe60806040526004361061004a5760003560e01c80630a22b1341461004c5780630ffbb538146100a35780632d339b1e1461010f5780633b66805914610160578063cd300bc01461018b575b005b34801561005857600080fd5b506100616101d0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100af57600080fd5b506100f2600480360360208110156100c657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101f5565b604051808381526020018281526020019250505060405180910390f35b34801561011b57600080fd5b5061015e6004803603602081101561013257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610219565b005b34801561016c57600080fd5b50610175610264565b6040518082815260200191505060405180910390f35b34801561019757600080fd5b506101ce600480360360408110156101ae57600080fd5b81019080803590602001909291908035906020019092919050505061029c565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60016020528060005260406000206000915090508060000154908060010154905082565b8073ffffffffffffffffffffffffffffffffffffffff166108fc60059081150290604051600060405180830381858888f19350505050158015610260573d6000803e3d6000fd5b5050565b60008061026f610264565b90506000811161027e57600080fd5b3073ffffffffffffffffffffffffffffffffffffffff163191505090565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190555080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101819055507fc72c11333761a47423f2cbe54eda92b59b0b5977a444194492fe47f41b3c0ab4828260405180806020018481526020018381526020018281038252600f8152602001807f54726164652061677265656d616e740000000000000000000000000000000000815250602001935050505060405180910390a1505056fea265627a7a723158202213689e7b808d8eac8d92928e4b6d1f25c0e6e326065d6006e136b3189ccd4b64736f6c634300050c0032",
+  "deployedBytecode": "0x60806040526004361061004a5760003560e01c80630a22b1341461004c5780630ffbb538146100a35780632d339b1e1461010f5780633b66805914610160578063cd300bc01461018b575b005b34801561005857600080fd5b506100616101d0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156100af57600080fd5b506100f2600480360360208110156100c657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101f5565b604051808381526020018281526020019250505060405180910390f35b34801561011b57600080fd5b5061015e6004803603602081101561013257600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610219565b005b34801561016c57600080fd5b50610175610264565b6040518082815260200191505060405180910390f35b34801561019757600080fd5b506101ce600480360360408110156101ae57600080fd5b81019080803590602001909291908035906020019092919050505061029c565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60016020528060005260406000206000915090508060000154908060010154905082565b8073ffffffffffffffffffffffffffffffffffffffff166108fc60059081150290604051600060405180830381858888f19350505050158015610260573d6000803e3d6000fd5b5050565b60008061026f610264565b90506000811161027e57600080fd5b3073ffffffffffffffffffffffffffffffffffffffff163191505090565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000018190555080600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600101819055507fc72c11333761a47423f2cbe54eda92b59b0b5977a444194492fe47f41b3c0ab4828260405180806020018481526020018381526020018281038252600f8152602001807f54726164652061677265656d616e740000000000000000000000000000000000815250602001935050505060405180910390a1505056fea265627a7a723158202213689e7b808d8eac8d92928e4b6d1f25c0e6e326065d6006e136b3189ccd4b64736f6c634300050c0032",
   "sourceMap": "28:782:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;28:782:0;;;;;;;",
   "deployedSourceMap": "28:782:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;69:30;;8:9:-1;5:2;;;30:1;27;20:12;5:2;69:30:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;232:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;232:44:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;232:44:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;728:79;;8:9:-1;5:2;;;30:1;27;20:12;5:2;728:79:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;728:79:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;551:169;;8:9:-1;5:2;;;30:1;27;20:12;5:2;551:169:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;328:215;;8:9:-1;5:2;;;30:1;27;20:12;5:2;328:215:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;328:215:0;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;69:30;;;;;;;;;;;;;:::o;232:44::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;728:79::-;783:2;:11;;:18;795:5;783:18;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;783:18:0;728:79;:::o;551:169::-;599:4;615:12;630:17;:15;:17::i;:::-;615:32;;675:1;665:7;:11;656:21;;;;;;701:4;693:21;;;686:28;;;551:169;:::o;328:215::-;422:6;394;:18;401:10;394:18;;;;;;;;;;;;;;;:25;;:34;;;;469:12;435:6;:18;442:10;435:18;;;;;;;;;;;;;;;:31;;:46;;;;493:44;516:6;524:12;493:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;328:215;;:::o",
   "source": "pragma solidity ^0.5.12;\r\n\r\ncontract AutomaticTradeContract {\r\n  \r\n  address public AddressContract;\r\n  \r\n  event Log(string message, uint amount, uint offerPotatos);\r\n  \r\n  struct OfferInfo {uint amount; uint offerPotatos;}\r\n  \r\n  mapping (address => OfferInfo) public Offers;\r\n  \r\n  function () external payable {\r\n  }\r\n  \r\n  function TradeOffer(uint amount, uint offerPotatos) public {\r\n    Offers[msg.sender].amount = amount;\r\n    Offers[msg.sender].offerPotatos = offerPotatos;\r\n    emit Log(\"Trade agreemant\", amount, offerPotatos);\r\n  }\r\n  \r\n  function ContractBalance() public view returns (uint) { \r\n      uint balance = ContractBalance();\r\n      require (balance > 0);\r\n      return address(this).balance;\r\n  }\r\n  \r\n  function Transfer(address payable to) public { \r\n      to.transfer(5 wei);\r\n  }\r\n}\r\n",
-  "sourcePath": "C:/Users/Kees/testen/contracts/AutomaticTradeContract.sol",
+  "sourcePath": "C:/Users/Kees/Desktop/Dapps_Github/BC1_Kees/Day_07_Mon_9_12_2019/testen/contracts/AutomaticTradeContract.sol",
   "ast": {
-    "absolutePath": "/C/Users/Kees/testen/contracts/AutomaticTradeContract.sol",
+    "absolutePath": "/C/Users/Kees/Desktop/Dapps_Github/BC1_Kees/Day_07_Mon_9_12_2019/testen/contracts/AutomaticTradeContract.sol",
     "exportedSymbols": {
       "AutomaticTradeContract": [
         89
@@ -469,7 +469,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 195,
+                            "referencedDeclaration": 161,
                             "src": "401:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -574,7 +574,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 195,
+                            "referencedDeclaration": 161,
                             "src": "442:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -956,10 +956,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        198,
-                        199
+                        164,
+                        165
                       ],
-                      "referencedDeclaration": 198,
+                      "referencedDeclaration": 164,
                       "src": "656:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -996,7 +996,7 @@
                           "name": "this",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 209,
+                          "referencedDeclaration": 175,
                           "src": "701:4:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_AutomaticTradeContract_$89",
@@ -1255,7 +1255,7 @@
     "src": "0:812:0"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/Kees/testen/contracts/AutomaticTradeContract.sol",
+    "absolutePath": "/C/Users/Kees/Desktop/Dapps_Github/BC1_Kees/Day_07_Mon_9_12_2019/testen/contracts/AutomaticTradeContract.sol",
     "exportedSymbols": {
       "AutomaticTradeContract": [
         89
@@ -1593,7 +1593,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 195,
+                            "referencedDeclaration": 161,
                             "src": "401:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1698,7 +1698,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 195,
+                            "referencedDeclaration": 161,
                             "src": "442:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -2080,10 +2080,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        198,
-                        199
+                        164,
+                        165
                       ],
-                      "referencedDeclaration": 198,
+                      "referencedDeclaration": 164,
                       "src": "656:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2120,7 +2120,7 @@
                           "name": "this",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 209,
+                          "referencedDeclaration": 175,
                           "src": "701:4:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_AutomaticTradeContract_$89",
@@ -2383,6 +2383,39 @@
     "version": "0.5.12+commit.7709ece9.Emscripten.clang"
   },
   "networks": {
+    "1": {
+      "events": {
+        "0xc72c11333761a47423f2cbe54eda92b59b0b5977a444194492fe47f41b3c0ab4": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "message",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "offerPotatos",
+              "type": "uint256"
+            }
+          ],
+          "name": "Log",
+          "type": "event",
+          "signature": "0xc72c11333761a47423f2cbe54eda92b59b0b5977a444194492fe47f41b3c0ab4"
+        }
+      },
+      "links": {},
+      "address": "0x3baC8fE762721a90A823Fd479AE5281B37997de6",
+      "transactionHash": "0xeed4a8c03e2d3074c58df1099e38d9a088f815911116472552f4389b7763803d"
+    },
     "5777": {
       "events": {
         "0xc72c11333761a47423f2cbe54eda92b59b0b5977a444194492fe47f41b3c0ab4": {
@@ -2418,7 +2451,7 @@
     }
   },
   "schemaVersion": "3.0.19",
-  "updatedAt": "2019-12-09T10:34:21.568Z",
+  "updatedAt": "2019-12-09T11:03:33.039Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

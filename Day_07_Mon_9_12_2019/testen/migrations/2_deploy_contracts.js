@@ -1,5 +1,6 @@
-var HelloWorld = artifacts.require("HelloWorld");
+var AutomaticTradeContract = artifacts.require("AutomaticTradeContract");
 module.exports = function(deployer) {
-    deployer.deploy(HelloWorld);
+	console.log("hier");
+    deployer.deploy(AutomaticTradeContract);
     // Additional contracts can be deployed here
 };
