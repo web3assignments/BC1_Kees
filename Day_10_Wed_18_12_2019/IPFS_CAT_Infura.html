@@ -6,6 +6,9 @@
     <body>
         <h1>IPFS add file and retrieve it</h1>
         <pre id="log" style="width:100%;height:200px"></pre>
+		<form>
+         <input type = "file" name = "upload" accept = "image/*" />
+        </form>
         <script type="text/javascript">
 		
         function log(logstr) {   
@@ -13,7 +16,7 @@
         }
         async function f() {
 			
-            const str="Testen \r\n"; // note: trailing space, CR, LF
+            const str="Upload \r\n"; // note: trailing space, CR, LF
             const Buffer=window.buffer.Buffer;
             const ipfs = window.IpfsHttpClient('https://ipfs.infura.io:5001');         
             const bufDataToHash = Buffer.from(str);
