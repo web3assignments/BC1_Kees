@@ -6,44 +6,54 @@
 		<script src="https://unpkg.com/ipfs-api@9.0.0/dist/index.js"
 		integrity="sha384-5bXRcW9kyxxnSMbOoHzraqa7Z0PQWIao+cgeg327zit1hz5LZCEbIMx/LWKPReuB"
 		crossorigin="anonymous"></script>
+			<script src="https://unpkg.com/ipfs-http-client/dist/index.js"> </script>
     </head>
 		<script type="text/javascript">
-		function upload() {
-        const reader = new FileReader();
-        reader.onloadend = function() {
-        const ipfs = window.IpfsApi('localhost', 5001) // Connect to IPFS
-        const buf = buffer.Buffer(reader.result) // Convert data into buffer
-        ipfs.files.add(buf, (err, result) => { // Upload buffer to IPFS
+    function upload() {
+    const reader = new FileReader();
+    reader.onloadend = function() {
+    const ipfs = window.IpfsApi('localhost', 5001) // Connect to IPFS
+    const buf = buffer.Buffer(reader.result) // Convert data into buffer
+    ipfs.files.add(buf, (err, result) => { // Upload buffer to IPFS
           if(err) {
             console.error(err)
             return
           }
-		  console.log("test");
-          const Hash= result[0].hash;       
-          log(`Checking hash ${Hash} via Infura`)
-          const file = ipfs.cat(Hash).catch(x=> log(`Error ${x}`));
-            if (file)
-          log(file.toString('utf8'));
+	console.log(result[0].hash);
+	g(result[0].hash);
         })
-     
-        const photo = document.getElementById("photo");
-        reader.readAsArrayBuffer(photo.files[0]); // Read Provided File
-	    }
-        }			  
-        function log(logstr) {   
+      }
+      const photo = document.getElementById("photo");
+      reader.readAsArrayBuffer(photo.files[0]); // Read Provided File
+	  console.log(reader);
+    }
+	async function g(hash) {
+			document.getElementById("log").innerHTML="";
+           
+            const ipfs = window.IpfsHttpClient('http://localhost:5001');
+				
+            const file = await ipfs.cat(hash).catch(x=> log(`Error ${x}`));
+            console.log(file);
+			if (file)
+                log(file.toString('utf8'));
+        }
+		  function log(logstr) {   
             document.getElementById("log").innerHTML +=logstr+"\n";
         }
+	
+	
 		</script>
     <body>
         <h1>IPFS add file and retrieve it</h1>
         <pre id="log" style="width:100%;height:200px"></pre>
 			 <form action="/">
       <fieldset>
-        <legend>Upload photo</legend>
+        <legend>Upload Document</legend>
         <input type="file" name="photo" id="photo">
         <button type="button" onclick="upload()">Upload</button>
       </fieldset>
     </form>
+
 	</body>
 
 </html>
